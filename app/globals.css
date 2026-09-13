@@ -280,3 +280,24 @@ p {
     animation: none;
   }
 }
+@keyframes heroParticleFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.75);
+    opacity: 0.12;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate3d(12px, -18px, 0) scale(1.15);
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-particle {
+    animation: none;
+  }
+}

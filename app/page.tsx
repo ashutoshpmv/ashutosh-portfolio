@@ -9,15 +9,24 @@ import ContactSection from "@/components/ui/contact-section";
 import Reveal from "@/components/ui/reveal";
 import AmbientBackground from "@/components/ui/ambient-background";
 import { projects } from "@/data/projects";
+import Hero3D from "@/components/ui/hero-3d";
+import HeroParticles from "@/components/ui/hero-particles";
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#080d1a] text-[#f8fafc]">
       <Navbar />
 
-   {/* HERO */}
-<section className="relative flex min-h-[calc(100vh-73px)] items-center overflow-hidden px-6 py-24 md:py-32">
+  {/* HERO */}
+<section className="relative flex min-h-[calc(100vh-73px)] items-center overflow-hidden px-6 py-20 md:py-24">
+
   <AmbientBackground />
+    <HeroParticles />
+
+  {/* 3D Globe */}
+  <div className="pointer-events-none absolute right-[-2%] top-1/2 z-0 h-[560px] w-[560px] -translate-y-1/2 md:right-[2%] md:h-[600px] md:w-[600px] lg:right-[4%] lg:h-[640px] lg:w-[640px]">
+  <Hero3D />
+</div>
 
   {/* subtle frame lines */}
   <div className="pointer-events-none absolute left-6 top-0 h-full w-px bg-white/[0.035] md:left-10" />
@@ -37,78 +46,82 @@ export default function Home() {
 
     {/* NAME */}
     <Reveal delay={0.08}>
-      <h1 className="max-w-[1200px] text-[clamp(4rem,10vw,9.5rem)] font-bold leading-[0.82] tracking-[-0.065em]">
-        <span className="block text-white">ASHUTOSH</span>
+      <h1 className="max-w-[850px] text-[clamp(4rem,9vw,8.5rem)] font-bold leading-[0.82] tracking-[-0.065em]">
+
+        <span className="block text-white">
+          ASHUTOSH
+        </span>
 
         <span className="mt-2 block bg-gradient-to-r from-slate-200 via-blue-200 to-violet-300 bg-clip-text text-transparent">
           KUMAR SINGH
         </span>
+
       </h1>
     </Reveal>
 
-    {/* DESCRIPTION + META */}
+    {/* DESCRIPTION */}
     <Reveal delay={0.18}>
-      <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-[1.35fr_0.65fr]">
+      <div className="mt-12 max-w-2xl md:mt-14">
 
-        <div>
-          <p className="max-w-2xl text-lg leading-8 text-slate-400 md:text-xl md:leading-9">
-            I build practical software and explore the systems behind it.
-            Interested in AI/ML, cybersecurity, cloud and full-stack
-            development.
-          </p>
+        <p className="text-lg leading-8 text-slate-400 md:text-xl md:leading-9">
+          I build practical software and explore the systems behind it.
+          Interested in AI/ML, cybersecurity, cloud and full-stack
+          development.
+        </p>
 
-          {/* ACTIONS */}
-          <div className="mt-9 flex flex-wrap gap-3">
-            <a
-              href="#work"
-              className="group relative overflow-hidden border border-cyan-300/30 bg-cyan-400/[0.06] px-6 py-3.5 text-sm font-medium text-cyan-100 transition-all duration-300 hover:border-cyan-300/60 hover:bg-cyan-400/[0.1] hover:shadow-[0_0_35px_rgba(34,211,238,0.08)]"
-            >
-              <span className="relative z-10">
-                Explore Work
-                <span className="ml-3 inline-block transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
+        {/* ACTIONS */}
+        <div className="mt-9 flex flex-wrap gap-3">
+
+          <a
+            href="#work"
+            className="group relative overflow-hidden border border-cyan-300/30 bg-cyan-400/[0.06] px-6 py-3.5 text-sm font-medium text-cyan-100 transition-all duration-300 hover:border-cyan-300/60 hover:bg-cyan-400/[0.1] hover:shadow-[0_0_35px_rgba(34,211,238,0.08)]"
+          >
+            <span className="relative z-10">
+              Explore Work
+              <span className="ml-3 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                →
               </span>
-            </a>
+            </span>
+          </a>
 
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/10 bg-white/[0.02] px-6 py-3.5 text-sm text-slate-400 transition-all duration-300 hover:border-violet-300/30 hover:bg-white/[0.04] hover:text-white"
-            >
-              View Resume
-            </a>
-          </div>
-        </div>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-white/10 bg-white/[0.02] px-6 py-3.5 text-sm text-slate-400 transition-all duration-300 hover:border-violet-300/30 hover:bg-white/[0.04] hover:text-white"
+          >
+            View Resume
+          </a>
 
-        {/* META PANEL */}
-        <div className="border-l border-white/10 pl-6 md:flex md:flex-col md:justify-end md:pb-1">
-          <div className="space-y-4 font-mono text-[10px] uppercase tracking-[0.18em]">
-
-            <div className="flex items-center gap-3">
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400/70 shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
-              <span className="text-slate-500">2026 CSE Graduate</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-400/60" />
-              <span className="text-slate-500">Cybersecurity Honors</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="h-1.5 w-1.5 rounded-full bg-violet-400/60" />
-              <span className="text-slate-500">Greater Noida / India</span>
-            </div>
-
-          </div>
         </div>
       </div>
     </Reveal>
 
+    {/* META */}
+    <Reveal delay={0.24}>
+      <div className="mt-12 flex flex-col gap-4 border-l border-white/10 pl-5 font-mono text-[9px] uppercase tracking-[0.18em] text-slate-600 md:mt-14">
+
+        <div className="flex items-center gap-3">
+          <span className="h-1.5 w-1.5 rounded-full bg-cyan-400/70 shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
+          2026 CSE Graduate
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="h-1.5 w-1.5 rounded-full bg-blue-400/60" />
+          Cybersecurity Honors
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="h-1.5 w-1.5 rounded-full bg-violet-400/60" />
+          Greater Noida / India
+        </div>
+
+      </div>
+    </Reveal>
+
     {/* BOTTOM STATUS */}
-    <Reveal delay={0.28}>
-      <div className="mt-20 flex flex-col justify-between gap-5 border-t border-white/[0.07] pt-5 font-mono text-[9px] uppercase tracking-[0.2em] text-slate-700 sm:flex-row sm:items-center md:mt-24">
+    <Reveal delay={0.3}>
+      <div className="mt-16 flex flex-col justify-between gap-5 border-t border-white/[0.07] pt-5 font-mono text-[9px] uppercase tracking-[0.2em] text-slate-700 sm:flex-row sm:items-center md:mt-20">
 
         <div className="flex items-center gap-3">
           <span className="relative flex h-2 w-2">
@@ -119,7 +132,7 @@ export default function Home() {
           Available for opportunities
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex gap-5">
           <span>React</span>
           <span>Node.js</span>
           <span>Python</span>
@@ -131,7 +144,6 @@ export default function Home() {
 
   </div>
 </section>
-
       {/* =====================================================
           SELECTED WORK
       ===================================================== */}
